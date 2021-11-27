@@ -48,6 +48,6 @@ A function needs to be created to store the new entry page and redirect the user
 HTML pages needed for this project:
 * index.html
 * layout.html
-* new_page.html
+* new.html
 * search.html
 * error.html 
