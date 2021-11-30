@@ -47,6 +47,7 @@ A function needs to be created to store the new entry page and redirect the user
 ## List of HTML Pages
 HTML pages needed for this project:
 * index.html
+* entry.html
 * layout.html
 * new.html
 * search.html
