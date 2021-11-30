@@ -10,24 +10,26 @@ class CreateForm(forms.Form):
     content = forms.CharField(label="content")
 
 
-"""Display index (home) page"""
 def index(request):
+    """
+    Displays index (home) page.
+    """
     # display all entries in list 
     return render(request, "encyclopedia/index.html", {
         "entries": util.list_entries()
     })
 
 
-"""Displays selected entry page if it exists, otherwise displays error page."""
 def entry(request, title):
-
+    """
+    Displays selected entry page if it exists, otherwise displays error page.
+    """
     # create variable to store retrieved entry
     entry_page = util.get_entry(title)
 
     markdown = Markdown()
     
     if entry_page is not None:
-
         # display entry content 
         return render(request, "encyclopedia/entry.html", {
         "title": title,
@@ -40,9 +42,10 @@ def entry(request, title):
     })
 
 
-"""Displays searched page if it exists, otherwise displays search results."""
 def search(request):
-
+    """
+    Displays searched page if it exists, otherwise displays search results.
+    """
     query = request.GET.get("q")
 
     if util.get_entry(query) is not None:
@@ -64,9 +67,10 @@ def search(request):
         })   
 
 
-"""Creates new wiki page and redirects user to that page."""
 def new(request):
-
+    """
+    Creates new wiki page and redirects user to that page.
+    """
     if request.method == "POST":
         form = CreateForm(request.POST)
 
@@ -89,9 +93,11 @@ def new(request):
     })
         
 
-"""Redirects user to a random wiki page."""
+
 def random_page(request):
-    
+    """
+    Redirects user to a random wiki page.
+    """
     # store all entry titles in variable
     entries = util.list_entries()
 
