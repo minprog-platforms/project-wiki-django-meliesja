@@ -17,7 +17,7 @@ def index(request):
     # display all entries in list 
     return render(request, "encyclopedia/index.html", {
         "entries": util.list_entries()
-    })
+        })
 
 
 def entry(request, title):
@@ -34,12 +34,12 @@ def entry(request, title):
         return render(request, "encyclopedia/entry.html", {
         "title": title,
         "entry": markdown.convert(entry_page)
-    })
+        })
 
     # display error page
     return render(request, "encyclopedia/error.html", {
         "title": title
-    })
+        })
 
 
 def search(request):
@@ -90,7 +90,7 @@ def new(request):
     # return empty form
     return render(request, "encyclopedia/new.html", {
         "form": CreateForm()
-    })
+        })
         
 
 
