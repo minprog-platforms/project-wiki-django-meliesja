@@ -36,10 +36,10 @@ Clicking on any of the entry names on the search results page should take the us
 #### Create New Page
 When a new page is created by the user, a number of files need to be changed in the encyclopedia directory:
 * layout.html:
-An href needs to be added so that the user can click on the 'Create new page' button and be redirected to a new page to create an entry.
+A href needs to be added so that the user can click on the 'Create new page' button and be redirected to a new page to create an entry.
 
 * urls.py:
-In this file a path needs to be added to the list of urlpatterns
+In this file a path needs to be added to the list of urlpatterns.
 
 * views.py:
 A function needs to be created to store the new entry page and redirect the user to that page if it does not exist yet and if it does, the user will be presented with an error message.
