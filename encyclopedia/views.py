@@ -9,7 +9,6 @@ class CreateForm(forms.Form):
     title = forms.CharField(label="title")
     content = forms.CharField(label="content")
 
-
 def index(request):
     """
     Displays index (home) page.
@@ -18,7 +17,6 @@ def index(request):
     return render(request, "encyclopedia/index.html", {
         "entries": util.list_entries()
         })
-
 
 def entry(request, title):
     """
@@ -40,7 +38,6 @@ def entry(request, title):
     return render(request, "encyclopedia/error.html", {
         "title": title
         })
-
 
 def search(request):
     """
@@ -65,7 +62,6 @@ def search(request):
         "query": query,
         "results": results
         })   
-
 
 def new(request):
     """
@@ -92,8 +88,6 @@ def new(request):
         "form": CreateForm()
         })
         
-
-
 def random_page(request):
     """
     Redirects user to a random wiki page.
